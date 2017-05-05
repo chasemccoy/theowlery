@@ -1,0 +1,56 @@
+---
+layout: null
+---
+
+{% include head.html %}
+
+{% if page.image %}
+  <div id="headerImage" style="background-image: url(/assets/img/{{ page.image }})">
+    <div class="overlay"></div>
+    <h1 class="siteTitle cornerTitle aboveOverlay fancy"><a href="{{ site.url }}" class="white">The Owlery</a></h1>
+
+    <div class="heroContent aboveOverlay">
+      <h2 class="fancy postTitle white" style="font-size: 3.0rem; line-height: 3.0rem;">{{ page.title }}</h2>
+      <span class="postDate white" style="font-size: 1.1rem;">{{ page.date | date: "%B %-d %Y" }}</span>
+    </div>
+  </div>
+  <div class="wrapper wrapper-image">
+
+  <div class="content content-page content-image">
+    {% if page.categories contains 'columns' %}
+      <article class="columns">
+    {% else if page.categories contains 'quotes' %}
+      <article class="quote">
+    {% else %}
+      <article>
+    {% endif %}
+{% else %}
+  <div class="wrapper-page">
+  {% include header.html %}
+
+  <div class="content content-page">
+
+    {% if page.categories contains 'columns' %}
+      <article class="columns">
+    {% else %}
+      <article>
+    {% endif %}
+      <h2 class="postTitle left">{{ page.title }}</h2>
+      <span class="postDate left">{{ page.date | date: "%B %-d %Y" }}</span>
+{% endif %}
+
+    {%  if page.categories contains 'quotes' %}
+      <p class="quoteText fancy">
+        “{{ page.content | remove: '<p>' | remove: '</p>'}}”
+      </p>
+      <p class="quoteSource">— {{ page.source }}</p>
+    {% else %}
+      {{ content }}
+    {% endif %}
+  </article>
+
+</div> <!-- end content -->
+
+
+{% include footer.html %}
+</div> <!-- end wrapper -->

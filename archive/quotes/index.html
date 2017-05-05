@@ -1,0 +1,16 @@
+---
+title: Quote Archive
+layout: page
+---
+
+<br>
+
+{% for post in site.categories.quotes %}
+   <article class="quote">
+     <p class="quoteText fancy">
+       “{{ post.content | remove: '<p>' | remove: '</p>'}}”
+     </p>
+     <p class="quoteSource">— {{ post.source }}</p>
+   </article>
+   <br>
+{% endfor %}

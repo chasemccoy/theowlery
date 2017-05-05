@@ -1,0 +1,47 @@
+---
+layout: null
+permalink: /main.xml
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ site.title | xml_escape }}</title>
+    <description>{{ site.description | xml_escape }}</description>
+    <link>{{ site.url }}{{ site.baseurl }}/</link>
+    <atom:link href="{{ "/main.xml" | prepend: site.baseurl | prepend: site.url }}" rel="self" type="application/rss+xml" />
+    <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
+    <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
+    <generator>Jekyll v{{ jekyll.version }}</generator>
+    {% for post in site.posts limit:10 %}
+      <item>
+        <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
+
+        {% if post.categories contains 'quotes' %}
+          <title>Quote: {{ post.title | xml_escape }}</title>
+        {% elsif post.categories contains 'asides' %}
+          <title>Aside: {{ post.title | xml_escape }}</title>
+        {% else %}
+          <title>{{ post.title | xml_escape }}</title>
+        {% endif %}
+
+        <description>
+          {% if post.categories contains 'quotes' %}
+            <![CDATA[
+            <p>
+              “{{ post.content | remove: '<p>' | remove: '</p>'}}”
+            </p>
+            <p>— {{ post.source }}</p>
+            ]]>
+          {% else %}
+            <![CDATA[
+            {{ post.content }}
+            ]]>
+          {% endif %}
+
+        </description>
+        <guid isPermaLink="true">{{ post.url | prepend: site.baseurl | prepend: site.url }}</guid>
+        <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
+      </item>
+    {% endfor %}
+  </channel>
+</rss>

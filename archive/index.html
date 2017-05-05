@@ -1,0 +1,54 @@
+---
+title: Archive
+layout: page
+---
+
+<p>Posts are split up by articles, asides, and <a href="/archive/quotes">quotes</a>.</p>
+
+<br>
+
+<div class="sectionDivider">
+  <span style="background-color: white; position: relative; top: -1.1em; padding: 0 0.5rem 0.5rem 0.5rem;" class="sectionHeader">
+    Articles
+  </span>
+</div>
+<ul class="archive-list">
+{% for post in site.categories.columns %}
+  <li>
+    <span class="archive-list-title"><a href="{{ post.url | prepend: site.baseurl }}">{{  post.title }}</a></span>
+    <span class="archive-date">{{ post.date | date: "%b %-d, %Y"}}</span>
+  </li>
+{% endfor %}
+</ul>
+
+<br><br>
+
+<div class="sectionDivider">
+  <span style="background-color: white; position: relative; top: -1.1em; padding: 0 0.5rem 0.5rem 0.5rem;" class="sectionHeader">
+    Asides
+  </span>
+</div>
+<ul class="archive-list">
+{% for post in site.categories.asides %}
+  <li>
+    <span class="archive-list-title"><a href="{{ post.url | prepend: site.baseurl }}">{{  post.title }}</a></span>
+    <span class="archive-date">{{ post.date | date: "%b %-d, %Y"}}</span>
+  </li>
+{% endfor %}
+</ul>
+
+<br><br>
+
+<div class="sectionDivider">
+  <span style="background-color: white; position: relative; top: -1.1em; padding: 0 0.5rem 0.5rem 0.5rem;" class="sectionHeader">
+    Quotes
+  </span>
+</div>
+<ul class="archive-list">
+{% for post in site.categories.quotes %}
+  <li>
+    <span class="archive-list-title"><a href="{{ post.url | prepend: site.baseurl }}">{{  post.title }}</a></span>
+    <span class="archive-date">{{ post.date | date: "%b %-d, %Y"}}</span>
+  </li>
+{% endfor %}
+</ul>
