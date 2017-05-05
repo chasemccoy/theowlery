@@ -1,0 +1,19 @@
+ul.archive-list {
+  @extend .list-reset;
+
+  li {
+    @extend .pb1;
+  }
+
+  .archive-list-title a {
+    @extend .text-decoration-none;
+  }
+
+  .archive-date {
+    @extend .color-gray;
+  }
+
+  .archive-date::before {
+    content: "\00a0 \00a0 \00a0 \00a0"
+  }
+}

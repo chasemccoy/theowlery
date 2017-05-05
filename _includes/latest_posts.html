@@ -1,0 +1,35 @@
+<div class="latest-post col-md-12 pb4">
+  <div class="section-header color-brand pb2">Latest Posts</div>
+
+  {% for post in site.categories.columns limit:1 %}
+    <article class="columns dropcap">
+      {% if post.image %}
+        <div id="previewImage" style="background-image: url(/assets/img/{{ post.image }})">
+          <div class="overlay"></div>
+          <div class="heroContent aboveOverlay heroPreview">
+            <h2 class="postTitle fancy" style="font-size: 2.5rem; line-height: 2.7rem;"><a href="{{ post.url }}" class="white">{{ post.title }}</a></h2>
+            <span class="postDate white" style="font-size: 0.8rem;">{{ post.date | date: "%B %-d %Y" }}</span>
+          </div>
+        </div>
+      {% else %}
+        <div><a class="h1 post-title" href="{{ post.url }}">{{ post.title }}</a></div>
+        <div class="post-date">{{ post.date | date: "%B %-d, %Y" }}</div>
+        {{ post.excerpt  | replace_first:'<p>','<p class="my1">' }}
+        <a href="{{ post.url }}" class="more">Continue reading...</a>
+      {% endif %}
+    </article>
+  {% endfor %}
+</div>
+
+<div class="col-md-12 pb2 two-up clearfix">
+  {% for post in site.categories.columns limit:2 offset:1 %}
+    <div class="col-md-6 col-sm-12 py3 px0">
+      <article class="columns">
+        <div><a class="h2 post-title" href="{{ post.url }}">{{ post.title }}</a></div>
+        <div class="post-date">{{ post.date | date: "%B %-d, %Y" }}</div>
+        {{ post.excerpt  | replace_first:'<p>','<p class="line-clamp my1">' }}
+        <a href="{{ post.url }}" class="more">Continue reading...</a>
+      </article>
+    </div>
+  {% endfor %}
+</div>

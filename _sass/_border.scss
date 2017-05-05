@@ -1,0 +1,106 @@
+/// @group Border
+.border {
+  // Applies a solid border of width equal to the $border-width
+  // config variable to all sides of an element.
+  border-style: solid;
+  border-width: $border-width;
+  border-color: map-get($brand, brand-high);
+}
+
+/// @group Border
+.border-top {
+  // Applies a solid border of width equal to the $border-width
+  // config variable to the top of an element.
+  border-top-style: solid;
+  border-top-width: $border-width;
+  border-color: map-get($brand, brand-high);
+}
+
+/// @group Border
+.border-right {
+  // Applies a solid border of width equal to the $border-width
+  // config variable to the right side of an element.
+  border-right-style: solid;
+  border-right-width: $border-width;
+  border-color: map-get($brand, brand-high);
+}
+
+/// @group Border
+.border-bottom {
+  // Applies a solid border of width equal to the $border-width
+  // config variable to the bottom of an element.
+  border-bottom-style: solid;
+  border-bottom-width: $border-width;
+  border-color: map-get($brand, brand-high);
+}
+
+/// @group Border
+.border-left {
+  // Applies a solid border of width equal to the $border-width
+  // config variable to the left side of an element.
+  border-left-style: solid;
+  border-left-width: $border-width;
+  border-color: map-get($brand, brand-high);
+}
+
+/// @group Border
+.border-none {
+  // Removes all borders from an element.
+  border: 0;
+}
+
+/// @group Border
+.rounded {
+  // Applies a border radius to an element equal to the $border-radius
+  // config variable.
+  border-radius: $border-radius;
+}
+
+/// @group Border
+.ellipse {
+  // Creates an ellipse shape by setting the border radius of an element
+  // to 50% of the element's size.
+  border-radius: 50%;
+}
+
+/// @group Border
+.pill {
+  // Creates a pill shape by setting the border radius of the element
+  // to the $border-pill config variable.
+  background-clip: padding-box;
+  border-radius: $border-pill;
+}
+
+/// @group Border
+.rounded-top {
+  // Rounds the top two corners of the element with the $border-radius
+  // config variable.
+  border-radius: $border-radius $border-radius 0 0;
+}
+
+/// @group Border
+.rounded-right {
+  // Rounds the right two corners of the element with the $border-radius
+  // config variable.
+   border-radius: 0 $border-radius $border-radius 0;
+ }
+
+/// @group Border
+.rounded-bottom {
+  // Rounds the bottom two corners of the element with the $border-radius
+  // config variable.
+  border-radius: 0 0 $border-radius $border-radius;
+}
+
+/// @group Border
+.rounded-left {
+  // Rounds the left two corners of the element with the $border-radius
+  // config variable.
+  border-radius: $border-radius 0 0 $border-radius;
+}
+
+/// @group Border
+.not-rounded {
+  // Removes any border radius from an element.
+  border-radius: 0;
+}

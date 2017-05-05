@@ -1,0 +1,9 @@
+.bg-component {
+  background-color: $white;
+}
+
+@each $id, $palette in $brand-palette {
+  @each $name, $color in $palette {
+    .bg-#{$name} { background-color: $color; }
+  }
+}

@@ -1,0 +1,74 @@
+.inline { display: inline }
+.block { display: block }
+.inline-block { display: inline-block }
+.table { display: table }
+.table-row { display: table-row }
+.table-cell { display: table-cell }
+.vertical-center { vertical-align: middle; }
+
+.flex { display: flex; }
+.flex-row-wrap { flex-flow: row wrap; }
+.items-center { align-items: center; }
+
+.overflow-hidden { overflow: hidden }
+.overflow-scroll { overflow: scroll }
+.overflow-auto { overflow: auto }
+.overflow-visible { overflow: visible; }
+
+.fit { max-width: 100% }
+.fill-x { width: 100% }
+.fill-y { height: 100% }
+.fill { width: 100%; height: 100%; }
+.fill-viewport { width: 100vw; height: 100vh; }
+
+.float-none {
+  float: none;
+}
+
+/// @group Helpers
+.float-left {
+  // Floats the element to the left.
+  float: left;
+}
+
+/// @group Helpers
+.float-right {
+  // Floats the element to the right.
+  float: right;
+}
+
+/// @name .clearfix
+/// @group Helpers
+.clearfix:after {
+  // Apply this class to a float-containing parent element
+  // in order to properly clear its children.
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@for $i from 1 through $layout-count {
+  .x#{$i} {width: #{$i * .5}rem;}
+    .max-x#{$i} {max-width: #{$i * .5}rem;}
+    .min-x#{$i} {min-width: #{$i * .5}rem;}
+  .y#{$i} {height: #{$i * .5}rem;}
+    .max-y#{$i} {max-height: #{$i * .5}rem;}
+    .min-y#{$i} {min-height: #{$i * .5}rem;}
+}
+
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+  > .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}

@@ -1,0 +1,17 @@
+<div class="asides pt2 pt3 border-left sans" id="asides-list">
+  <div class="h5 bold section-header color-brand pl2">The Asides</div>
+
+  {% assign amount = 15 %}
+
+  {% for post in site.categories.asides limit:amount %}
+     <article class="aside line-height-3">
+       <p>
+         <a class="text-decoration-none color-gray" href="{{ post.url | prepend: site.baseurl }}">{{ post.date | date: "%b %-d" }} •</a>
+         {{ post.content | remove: '<p>' | remove: '</p>'}}
+      </p>
+     </article>
+     {% if forloop.index != amount %}
+        <hr class="bg-brand-high border-none m0">
+     {% endif %}
+  {% endfor %}
+</div>

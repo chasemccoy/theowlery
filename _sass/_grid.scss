@@ -1,0 +1,54 @@
+.container {
+  @include container(center);
+}
+
+@if (variable-exists(breakpoints)) {
+  @each $bp-name, $bp-value in $breakpoints {
+    @if $bp-name == 'xs' {
+      @media all {
+        .col-#{$bp-name}-0 {
+          display: none;
+        }
+
+        @for $i from 1 through map-get($susy, columns) {
+          .col-#{$bp-name}-#{$i} {
+            @include span($i);
+            min-height: 1px;
+            display: block;
+          }
+        }
+      }
+    }
+    @else {
+      @include media-breakpoint-up($bp-name) {
+        .col-#{$bp-name}-0 {
+          display: none;
+        }
+
+        @for $i from 1 through map-get($susy, columns) {
+          .col-#{$bp-name}-#{$i} {
+            @include span($i);
+            min-height: 1px;
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
+
+.mobile {
+  display: block;
+
+  @include media-breakpoint-up(md) {
+    display: none;
+  };
+}
+
+.desktop {
+  display: none;
+
+  @include media-breakpoint-up(md) {
+    display: block;
+  };
+}

@@ -1,0 +1,150 @@
+body {
+  font-family: $sans;
+}
+
+.sans { font-family: $sans; }
+.serif { font-family: $serif; }
+
+h1, h2, h3, h4, h5, h6 {
+  @extend .sans;
+}
+
+.h1 { font-size: $h1; }
+.h2 { font-size: $h2; }
+.h3 { font-size: $h3; }
+.h4 { font-size: $h4; }
+.h5 { font-size: $h5; }
+.h6 { font-size: $h6; }
+
+a {
+  color: map-get($brand, brand);
+  text-decoration: underline;
+  -o-transition: .5s;
+  -ms-transition: .5s;
+  -moz-transition: .5s;
+  -webkit-transition: .5s;
+  transition: .5s;
+
+  &:hover {
+    @extend .color-brand-low;
+  }
+}
+
+.section-header {
+  @extend .h6, .bold, .sans;
+  letter-spacing: 0.15rem;
+  text-transform: uppercase;
+}
+
+.post-title {
+  @extend .sans, .color-text, .text-decoration-none, .bold;
+}
+
+.post-date {
+  @extend .h5, .color-gray;
+}
+
+article.columns {
+  font-size: 1.2rem;
+  line-height: 30px;
+}
+
+article.asides {
+  @extend .sans;
+}
+
+article.columns.dropcap > p:first-of-type::first-letter {
+    float: left;
+    font-size: 70px;
+    line-height: 55px;
+    padding-top: 2px;
+    padding-right: 8px;
+}
+
+.line-clamp {
+  position: relative;
+  height: 30px * 3;
+  overflow: hidden;
+
+  &:after {
+    content: "";
+    text-align: right;
+    position: absolute;
+    @extend .bottom-0, .right-0;
+    width: 100%;
+    height: $line-height;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 75%);
+  }
+}
+
+blockquote {
+  margin-right: 0;
+
+  .aside & {
+    @extend .color-gray, .ml2;
+  }
+}
+
+/// @group Typography
+.text-decoration-none {
+  // Removes text decoration from an element
+  text-decoration: none;
+}
+
+/// @group Typography
+.bold { font-weight: 700; }
+
+/// @group Typography
+.medium { font-weight: 500; }
+
+/// @group Typography
+.regular { font-weight: 400; }
+
+/// @group Typography
+.italic { font-style: italic; }
+
+/// @group Typography
+.caps { text-transform: uppercase; }
+
+/// @group Typography
+.left-align { text-align: left; }
+
+/// @group Typography
+.center { text-align: center; }
+
+/// @group Typography
+.right-align { text-align: right; }
+
+/// @group Typography
+.justify { text-align: justify; }
+
+.line-height-1 { line-height: $line-height-1; }
+.line-height-2 { line-height: $line-height-2; }
+.line-height-3 { line-height: $line-height-3; }
+.line-height-4 { line-height: $line-height-4; }
+
+/// @group Typography
+.list-style-none { list-style: none; }
+
+/// @group Typography
+.underline { text-decoration: underline; }
+
+/// @group Typography
+.list-reset {
+  // Removes the bullets/numbers and left padding from a list.
+  list-style: none;
+  padding-left: 0;
+}
+
+/// @group Typography
+.list-inline {
+  // Creates an inline list
+  @extend .list-reset;
+  margin-left: -5px;
+
+  > li {
+    display: inline-block;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}

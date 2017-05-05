@@ -1,64 +1,52 @@
 <section class="footer">
-  <img src="/assets/img/footer_owl.png" style="width:3rem; margin:0;">
-  <p>Thanks for stopping by.</p>
+
+
 </section>
 
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="/assets/js/jquery.fitvids.js"></script>
-
 <script>
-  $(document).ready(function(){
-    // Target your .container, .wrapper, .post, etc.
-    $(".video").fitVids();
+  $(document).ready(function() {
+    function sumChildren(group) {
+      return $.makeArray($(group).children().map(function() {
+        return $(this).outerHeight();
+      })).reduce(function(a, b) { return a + b }, 0);
+    }
+
+    var contentHeight = sumChildren($('#main-content')) + 200;
+    var asidesList = $('#asides-list');
+    var asidesHeight = sumChildren(asidesList);
+
+    while ((asidesHeight - asidesList.children().last().outerHeight()) > Math.max(contentHeight, $(window).height())) {
+      var lastChild = asidesList.children().last();
+      asidesHeight -= lastChild.outerHeight();
+      lastChild.remove();
+    }
   });
-</script> -->
+</script>
 
 {% assign instafeed_template = '<a href="{{link}}" style="background-image: url({{image}})"></a>' %}
-
-<script type="text/javascript">
-document.getElementById("currentDate").innerHTML = getDate();
-
-function getDate() {
-  var current_date = new Date ( );
-
-  var month_names = new Array ( );
-  month_names[month_names.length] = "January";
-  month_names[month_names.length] = "February";
-  month_names[month_names.length] = "March";
-  month_names[month_names.length] = "April";
-  month_names[month_names.length] = "May";
-  month_names[month_names.length] = "June";
-  month_names[month_names.length] = "July";
-  month_names[month_names.length] = "August";
-  month_names[month_names.length] = "September";
-  month_names[month_names.length] = "October";
-  month_names[month_names.length] = "November";
-  month_names[month_names.length] = "December";
-
-  var day_names = new Array ( );
-  day_names[day_names.length] = "Sunday";
-  day_names[day_names.length] = "Monday";
-  day_names[day_names.length] = "Tuesday";
-  day_names[day_names.length] = "Wednesday";
-  day_names[day_names.length] = "Thursday";
-  day_names[day_names.length] = "Friday";
-  day_names[day_names.length] = "Saturday";
-
-  return "Today is " + day_names[current_date.getDay()] + ", " + month_names[current_date.getMonth()] + " " + current_date.getDate() + ", " + current_date.getFullYear();
-}
-</script>
 
 <script type="text/javascript">
     var feed = new Instafeed({
         get: 'user',
         userId: '6081727',
         accessToken: '6081727.c75aa6f.b26124e072a445ceb20c9bf9a59f3fe4',
-        limit: '12',
+        limit: '4',
         resolution: 'low_resolution',
         template: '{{ instafeed_template }}'
     });
     feed.run();
 </script>
 
+<script>
+  if (document.querySelector('#spotify-widget')) {
+    SCP({
+      selector: '#spotify-widget',
+      username: 'chase_mccoy',
+      api_key: 'ec7e41d641ec19029fd88d9ef34fb700',
+      width: '100%',
+      height: '370'
+    });
+  }
+</script>
 </body>
-</html>
+</html

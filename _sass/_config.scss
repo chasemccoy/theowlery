@@ -1,0 +1,85 @@
+$susy: (
+  math: fluid,
+  columns: 12,
+  column-width: 100px,
+  gutters: 20px/100px,
+  container: 80%,
+  gutter-position: inside-static
+);
+
+$breakpoints: (
+  xs: 25em,
+  sm: 38em,
+  md: 50em,
+  lg: 61em
+);
+
+$margin-count: 12;
+$padding-count: 12;
+$layout-count: 32;
+
+
+
+// ----------------------
+// TYPOGRAPHY -----------
+// ----------------------
+
+$sans: "Fakt Pro", "freight-sans-pro", system, -apple-system,
+    ".SFNSDisplay-Regular", 'Avenir Next', 'HelveticaNeue-Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$serif: "Georgia", serif;
+
+$h1: 2rem;
+$h2: 1.5rem;
+$h3: 1.25rem;
+$h4: 1rem;
+$h5: 0.875rem;
+$h6: 0.75rem;
+
+$line-height-1:  1;
+$line-height-2:  1.25;
+$line-height-3:  1.5;
+$line-height-4:  2;
+
+$border-width: 1px;
+$border-radius: 4px;
+$border-pill: 32px;
+
+// UI Color Definitions
+$white: #FFFFFF;
+$black: #000000;
+
+$ui-palette: (
+  "white": $white,
+  "black": $black,
+);
+
+$brand-color: #D53229;
+$gray-color: gray;
+$text-color: #3c3c3e;
+
+$brand: (
+  brand: $brand-color,
+  brand-high: #faebeb,
+  brand-mid: #FDF6F5,
+  brand-medium: #D99B98,
+  brand-low: darken($brand-color, 15%)
+);
+
+$gray: (
+  "gray": $gray-color,
+  gray-high: lighten($gray-color, 15%),
+  gray-low: darken($gray-color, 15%)
+);
+
+$text: (
+  text: $text-color,
+  text-high: lighten($text-color, 15%),
+  text-low: darken($text-color, 15%)
+);
+
+$brand-palette: (
+  ui: $ui-palette,
+  brand: $brand,
+  "gray": $gray,
+  text: $text,
+);

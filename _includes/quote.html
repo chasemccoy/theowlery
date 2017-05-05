@@ -1,0 +1,6 @@
+{% for post in site.categories.quotes limit:1 offset:include.offset %}
+  <article class="quote {{ include.align }}-align">
+    <p class="h1 serif line-height-2 my0">“{{ post.content | remove: '<p>' | remove: '</p>' | rstrip }}”</p>
+    <p class="section-header bold color-brand">— {{ post.source }}</p>
+  </article>
+{% endfor %}

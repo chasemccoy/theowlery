@@ -1,231 +1,33 @@
 ---
-layout: null
+layout: default
+title: The Owlery
 ---
 
-{% include head.html %}
+<div class="content col-md-8 col-sm-12 mb0 px0 clearfix" id="main-content">
+  {% include latest_posts.html %}
 
-<div class="wrapper">
-{% include header.html %}
-<div class="content">
-
-  <div class="firstSection">
-
-  {% for post in site.categories.columns limit:1 %}
-    {% assign wordCount = post.content | size %}
-    {% assign image = post.image %}
-  {% endfor %}
-
-  <!---------------------------->
-  <!-- ASIDES ------------------>
-  <!---------------------------->
-
-  <!-- <div class="sectionDivider">
-    <span style="background-color: white; position: relative; top: -1.1em;" class="sectionHeader">
-      The Asides
-    </span>
-  </div> -->
-
-  <div class="asides desktopOnly">
-    <div class="sectionHeader" style="padding: 0 0 0.5rem 1.5rem;">The Asides</div>
-    {% if wordCount < 6000 %}
-      {% assign amount = 10 %}
-    {% else %}
-      {% assign amount = 30 %}
-    {% endif %}
-
-    {% if image %}
-      {% assign amount = 30 %}
-    {% endif %}
-
-    {% for post in site.categories.asides limit:amount %}
-  	   <article class="aside">
-         <p>
-           <a class="asideDate" href="{{ post.url | prepend: site.baseurl }}">{{ post.date | date: "%b %-d" }} • </a>
-           {{ post.content | remove: '<p>' | remove: '</p>'}}
-        </p>
-       </article>
-       {% if forloop.index != amount %}
-          <hr class="asidesSeperator">
-       {% endif %}
-  	{% endfor %}
+  <div class="col-md-12 pt4">
+    <div class="section-header color-brand pb1"><a class="text-decoration-none"
+      href="http://instagram.com/chase_mccoy">Instagram</a></div>
+    {% include instagram.html %}
   </div>
 
-  <div class="asides mobileOnly">
-    <hr class="asidesSeperator">
-    <div class="sectionHeader">The Asides</div>
-    {% for post in site.categories.asides limit:8 %}
-  	   <article class="aside">
-         <p>
-           <a class="asideDate" href="{{ post.url | prepend: site.baseurl }}">{{ post.date | date: "%b %-d" }} • </a>
-           {{ post.content | remove: '<p>' | remove: '</p>'}}
-         </p>
-      </article>
-      <hr class="asidesSeperator">
-  	{% endfor %}
-  </div>
-
-  <!---------------------------->
-  <!-- COLUMN ------------------>
-  <!---------------------------->
-
-  <div class="column-content">
-
-  <!-- <div class="sectionDivider">
-    <span style="background-color: white; position: relative; top: -1.1em;" class="sectionHeader">
-      The Column
-    </span>
-  </div> -->
-
-  <div class="sectionHeader">The Column</div>
-
-  {% for post in site.categories.columns limit:1 %}
-    <article class="column">
-      {% if post.image %}
-        <div id="previewImage" style="background-image: url(/assets/img/{{ post.image }})">
-          <div class="overlay"></div>
-          <div class="heroContent aboveOverlay heroPreview">
-            <h2 class="postTitle fancy" style="font-size: 2.5rem; line-height: 2.7rem;"><a href="{{ post.url }}" class="white">{{ post.title }}</a></h2>
-            <span class="postDate white" style="font-size: 0.8rem;">{{ post.date | date: "%B %-d %Y" }}</span>
-          </div>
-        </div>
-      {% else %}
-        <h2 class="postTitle"><a href="{{ post.url }}">{{ post.title }}</a></h2>
-        <span class="postDate">{{ post.date | date: "%B %-d %Y" }}</span>
-      {% endif %}
-
-      {% if post.content contains '<!-- more -->' %}
-        {{ post.content | split:'<!-- more -->' | first }}
-      {% else %}
-      	{{ post.content }}
-      {% endif %}
-      <!-- <p style="text-align:center;">
-        <a href="{{ post.url }}" class="more">Continue reading...</a>
-      </p> -->
-    </article>
-  {% endfor %}
-
-  </div>
-
-  <div class="clearfix"></div>
-
-</div> <!-- End firstSection -->
-
-<div class="secondSection">
-
-  <!---------------------------->
-  <!-- PREVIOUS POSTS ---------->
-  <!---------------------------->
-
-  <!-- <div class="sectionDivider">
-    <span style="background-color: white; position: relative; top: -1.1em;" class="sectionHeader">
-      Previous Posts
-    </span>
-  </div> -->
-
-  <div class="previousPosts">
-
-  <hr class="asidesSeperator mobileOnly">
-
-  <div class="sectionHeader" style="text-align:center;">Previous Posts</div>
-
-  <ul class="previousPosts">
-	{% for post in site.categories.columns offset:1 limit: 5 %}
-		<li class="previousPost">
-      {% if post.image %}
-        <h2 class="postTitle previousTitle fancy"><a href="{{ post.url }}">{{ post.title }}</a></h2>
-      {% else %}
-        <h2 class="postTitle previousTitle"><a href="{{ post.url }}">{{ post.title }}</a></h2>
-      {% endif %}
-			<span class="postDate previousDate">{{ post.date | date: "%B %-d %Y" }}</span>
-		</li>
-    {% if forloop.index != 5 %}
-       <hr class="asidesSeperator">
-    {% endif %}
-	{% endfor %}
-  </ul>
-  </div>
-
-  <hr class="asidesSeperator mobileOnly">
-
-  <!---------------------------->
-  <!-- LATEST QUOTE ------------>
-  <!---------------------------->
-
-  <!-- <div class="sectionDivider">
-    <span style="background-color: white; position: relative; top: -1.1em;" class="sectionHeader">
-      Latest Quote
-    </span>
-  </div> -->
-
-  <div class="quote">
-
-  <div class="sectionHeader" style="text-align:center;">Latest Quote</div>
-
-  {% for post in site.categories.quotes limit:1 %}
-	   <article class="quote">
-       <p class="quoteText fancy">
-         “{{ post.content | remove: '<p>' | remove: '</p>'}}”
-       </p>
-       <p class="quoteSource">— {{ post.source }}</p>
-     </article>
-	{% endfor %}
-  </div>
-
-  <div class="clearfix"></div>
-
-</div> <!-- End secondSection -->
-
-  <!---------------------------->
-  <!-- ASIDES ------------------>
-  <!---------------------------->
-<!--
-  <div class="sectionDivider"></div>
-
-  <div class="asides" style="float:none; width:100%;">
-    <div class="asides-left">
-      {% for post in site.categories.asides offset:8 limit:5 %}
-    	   <article class="aside">
-           <p>
-             <a class="asideDate" href="{{ post.url | prepend: site.baseurl }}">{{ post.date | date: "%b %-d" }} • </a>
-             {{ post.content | remove: '<p>' | remove: '</p>'}}
-          </p>
-         </article>
-         {% if forloop.index != 5 %}
-            <hr class="asidesSeperator">
-         {% endif %}
-    	{% endfor %}
+  <div class="col-md-12 pt9">
+    <div class="col-md-8 pl0">
+      <div class="section-header color-brand pb2">Quotable Quotes</div>
+      {% include quote.html offset=0 align="left" %}
     </div>
-    <hr class="asidesSeperator mobileOnly">
-    <div class="asides-right">
-      {% for post in site.categories.asides offset:13 limit:5 %}
-    	   <article class="aside">
-           <p>
-             <a class="asideDate" href="{{ post.url | prepend: site.baseurl }}">{{ post.date | date: "%b %-d" }} • </a>
-             {{ post.content | remove: '<p>' | remove: '</p>'}}
-          </p>
-         </article>
-         {% if forloop.index != 5 %}
-            <hr class="asidesSeperator">
-         {% endif %}
-    	{% endfor %}
+  </div>
+
+  <div class="col-md-12 pt4">
+    <div class="col-md-4"></div>
+
+    <div class="col-md-8 pl0">
+      {% include quote.html offset=1 align="right" %}
     </div>
-    <div class="clearfix"></div>
-  </div> -->
-
-  <!---------------------------->
-  <!-- INSTAGRAM --------------->
-  <!---------------------------->
-
-  <div class="sectionDivider">
-    <a href="http://instagram.com/chase_mccoy">
-      <img src="/assets/img/instagram.png" class="instagram-logo sectionHeader" style="margin:0;">
-    </a>
   </div>
+</div>
 
-  <div id="instafeed">
-  </div>
-
-</div> <!-- end content -->
-
-{% include footer.html %}
-</div> <!-- end wrapper -->
+<div class="col-md-4 col-sm-12 pr0 px0" id="asides">
+  {% include asides.html %}
+</div>

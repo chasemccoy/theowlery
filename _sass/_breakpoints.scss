@@ -1,0 +1,91 @@
+// Breakpoint viewport sizes and media queries.
+//
+// Breakpoints are defined as a map of (name: minimum width), order from small to large:
+//
+//    (xs: 0, sm: 544px, md: 768px)
+//
+// The map defined in the `$grid-breakpoints` global variable is used as the `$custom-breakpoints` argument by default.
+
+// Name of the next breakpoint, or null for the last breakpoint.
+//
+//    >> breakpoint-next(sm)
+//    md
+//    >> breakpoint-next(sm, (xs: 0, sm: 544px, md: 768px))
+//    md
+//    >> breakpoint-next(sm, $breakpoint-names: (xs sm md))
+//    md
+@function breakpoint-next($name, $custom-breakpoint: $breakpoints, $breakpoint-names: map-keys($breakpoints)) {
+  $n: index($breakpoint-names, $name);
+  @return if($n < length($breakpoint-names), nth($breakpoint-names, $n + 1), null);
+}
+
+// Minimum breakpoint width. Null for the smallest (first) breakpoint.
+//
+//    >> breakpoint-min(sm, (xs: 0, sm: 544px, md: 768px))
+//    544px
+@function breakpoint-min($name, $custom-breakpoints: $breakpoints) {
+  $min: map-get($custom-breakpoints, $name);
+  @return if($min != 0, $min, null);
+}
+
+// Maximum breakpoint width. Null for the largest (last) breakpoint.
+// The maximum value is calculated as the minimum of the next one less 0.1.
+//
+//    >> breakpoint-max(sm, (xs: 0, sm: 544px, md: 768px))
+//    767px
+@function breakpoint-max($name, $custom-breakpoints: $breakpoints) {
+  $next: breakpoint-next($name, $custom-breakpoints);
+  @return if($next, breakpoint-min($next, $breakpoints) - .5em, null);
+}
+
+/// Creates a media object that applies the content to the given breakpoint or wider.
+///
+/// @group Responsiveness
+///
+/// @param {String} $name
+///   - The name of the breakpoint for which you want the content to apply.
+///     Accepts xs, sm, md, and xl.
+/// @param {Map} $custom-breakpoints [$breakpoints]
+///   - The map object that pairs breakpoint names to values. This is defined
+///     in _config.scss.
+///
+/// @example scss - Usage
+///   @include media-breakpoint-up(md) {
+///     // This code will target any layout from size md up.
+///   }
+@mixin media-breakpoint-up($name, $custom-breakpoints: $breakpoints) {
+  $min: breakpoint-min($name, $custom-breakpoints);
+  @if $min {
+    @media (min-width: $min) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+/// Creates a media object that applies the content to the given breakpoint or narrower.
+///
+/// @group Responsiveness
+///
+/// @param {String} $name
+///   - The name of the breakpoint for which you want the content to apply.
+///     Accepts xs, sm, md, and xl.
+/// @param {Map} $custom-breakpoints [$breakpoints]
+///   - The map object that pairs breakpoint names to values. This is defined
+///     in _config.scss.
+///
+/// @example scss - Usage
+///   @include media-breakpoint-down(md) {
+///     // This code will target any layout from size md down.
+///   }
+@mixin media-breakpoint-down($name, $custom-breakpoints: $breakpoints) {
+  $max: breakpoint-max($name, $custom-breakpoints);
+  @if $max {
+    @media (max-width: $max) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}

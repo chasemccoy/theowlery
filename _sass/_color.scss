@@ -1,0 +1,15 @@
+@each $id, $color in $ui-palette {
+  .color-#{$id} { color: $color; }
+}
+
+@each $id, $palette in $brand-palette {
+  @each $name, $color in $palette {
+    .color-#{$name} { color: $color; }
+  }
+}
+
+@each $id, $palette in $brand-palette {
+  @each $name, $color in $palette {
+    .border-color-#{$name} { border-color: $color; }
+  }
+}

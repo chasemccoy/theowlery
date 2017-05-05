@@ -1,0 +1,52 @@
+$sidebar-width: 16rem;
+$line-height: 26px;
+
+body {
+  font-size: 17px;
+  line-height: $line-height;
+  margin: 0;
+  @extend .serif;
+  @extend .color-text;
+}
+
+.wrapper {
+  font-size: 1.1rem;
+
+  @include media-breakpoint-up(sm) {
+    margin-left: $sidebar-width;
+  };
+}
+
+article img {
+  max-width: 100%;
+  @extend .rounded;
+}
+
+.content {
+  @extend .px6, .pt3;
+
+  @include media-breakpoint-down(sm) {
+    padding: 3rem 1.5rem 0 1.5rem;
+  };
+}
+
+.wf-loading {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.ie.wf-loading {
+  visibility: hidden;
+}
+
+.ie.wf-active {
+  visibility: visible;
+}
+
+.wf-active {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition: opacity .625s ease-in-out;
+  -moz-transition: opacity .625s ease-in-out;
+  transition: opacity .625s ease-in-out;
+}

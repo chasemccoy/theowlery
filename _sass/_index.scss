@@ -1,0 +1,46 @@
+.two-up {
+  > div:nth-child(1) {
+    padding-right: 1.5rem;
+
+    @include media-breakpoint-down(sm) {
+      padding-right: 0;
+    };
+  }
+
+  > div:nth-child(2) {
+    padding-left: 1.5rem;
+
+    @include media-breakpoint-down(sm) {
+      padding-left: 0;
+    };
+  }
+}
+
+#instafeed {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  a {
+    @include aspect-ratio(1, 1);
+    width: calc(25% - 10px);
+    padding: 0;
+    margin-right: 10px;
+    background-size: cover;
+    margin-bottom: 10px;
+    border-radius: 4px;
+
+    @include media-breakpoint-down(xs) {
+      width: calc(50% - 5px);
+      margin-right: 0;
+
+      &:nth-child(odd) {
+        margin-right: 10px;
+      }
+    };
+  }
+
+  a:last-child {
+    margin-right: 0;
+  }
+}

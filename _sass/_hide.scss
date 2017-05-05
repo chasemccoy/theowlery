@@ -1,0 +1,22 @@
+/// @group Helpers
+.hide {
+  // Hides the element on the page, as if it is removed from the DOM.
+  // You can also hide elements based on media queries using the following syntax:
+  // [breakpoint-name]-hide, where breakpoint-name is either xs, sm, md, or lg.
+  display: none !important;
+}
+
+/// @group Helpers
+.invisible {
+  // Makes the element invisible, while not collapsing its position
+  // on the page.
+  visibility: hidden;
+}
+
+@if (variable-exists(breakpoints)) {
+  @each $bp-name, $bp-value in $breakpoints {
+    @media (min-width: $bp-value) {
+      .#{$bp-name}-hide { display: none !important }
+    }
+  }
+}
