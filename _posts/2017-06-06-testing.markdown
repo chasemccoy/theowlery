@@ -1,8 +1,0 @@
----
-title: Testing
-date: 2017-06-06 17:03:00 Z
-categories:
-- aside
----
-
-Testing...
