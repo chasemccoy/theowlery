@@ -1,5 +1,6 @@
 ---
 title: Design is a vessel
+date: 2016-11-07 00:00:00 Z
 ---
 
 I really love this quote about design from [Frank Chimero’s interview on The Great Discontent](https://thegreatdiscontent.com/interview/frank-chimero):

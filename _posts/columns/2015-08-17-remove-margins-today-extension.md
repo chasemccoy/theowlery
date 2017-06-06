@@ -1,9 +1,10 @@
 ---
 title: How to remove the margins from an iOS Today View Extension
+date: 2015-08-17 00:00:00 Z
+categories:
+- Development
 author: Chase McCoy
 layout: post
-categories:
-  - Development
 ---
 
 If you’ve ever developed a Today Extension for iOS, you know that by default there is a margin on the left hand side so that the content of the widget aligns with the title. This is nice, but sometimes we want our content to extend to the edge of the widget.

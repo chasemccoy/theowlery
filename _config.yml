@@ -1,41 +1,40 @@
-# Site settings
-title: "The Owlery"
-email: "chasem000@gmail.com"
-description: "A hyperlink odyssey."
-url: "http://theowlery.co"
-
-# Build settings
+---
+title: The Owlery
+timezone: UTC
+collections:
+  posts:
+    title: Posts
+    output: true
+  uploads:
+    title: Uploads
+    output: true
+defaults:
+- scope:
+    path: ''
+    type: posts
+  values:
+    layout: post
+    category: post
+- scope:
+    path: _posts/asides
+    type: posts
+  values:
+    category: asides
+- scope:
+    path: _posts/columns
+    type: posts
+  values:
+    category: columns
+- scope:
+    path: _posts/quotes
+    type: posts
+  values:
+    category: quotes
+email: chasem000@gmail.com
+description: A hyperlink odyssey.
+url: http://theowlery.co
 markdown: kramdown
 highlighter: rouge
 future: true
-
 excerpt_separator: "\n\n"
-
-permalink: /:year/:month/:title
-
-defaults:
-  -
-    scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-      category: post
-  -
-    scope:
-      path: "_posts/asides"
-      type: "posts"
-    values:
-      category: "asides"
-  -
-    scope:
-      path: "_posts/columns"
-      type: "posts"
-    values:
-      category: "columns"
-  -
-    scope:
-      path: "_posts/quotes"
-      type: "posts"
-    values:
-      category: "quotes"
+permalink: "/:year/:month/:title"

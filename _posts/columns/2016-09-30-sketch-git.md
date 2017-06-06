@@ -1,5 +1,6 @@
 ---
 title: Sketch + Git
+date: 2016-09-30 00:00:00 Z
 ---
 
 If you do any sort of interface design in a team environment, you have probably run into the following scenario: you edit some mockups, export them, and then send them to your developers. Then you make some changes, and send them again. Next thing you know, you’ve got 24 copies of the mockups and each one is different and your developers don’t know which one is the latest and everything is chaos. 

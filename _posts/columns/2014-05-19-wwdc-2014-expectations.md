@@ -1,11 +1,13 @@
 ---
 title: WWDC 2014 Expectations
+date: 2014-05-19 00:00:00 Z
+permalink: "/2014/05/wwdc-2014-expectations/"
+categories:
+- Apple
 author: Chase McCoy
 layout: post
-permalink: /2014/05/wwdc-2014-expectations/
-categories:
-  - Apple
 ---
+
 I love Apple because they make great stuff, and they generate a lot of excitement about that stuff. Maybe that’s just me being a super nerd, but I think that a lot of people look forward to the stuff that Apple makes.
 
 One of the most exciting times of the year for Apple fans is their Worldwide Developer’s Conference (WWDC). Every summer Apple holds this event to show off the latest versions of iOS and OS X. Last year they showed us iOS 7, which was a drastic redesign of iOS. They also showed OS X Mavericks, which brought some great new features to the Mac.

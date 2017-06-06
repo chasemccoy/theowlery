@@ -1,12 +1,14 @@
 ---
 title: Halfway There
+date: 2013-10-25 00:00:00 Z
+permalink: "/2013/10/halfway-there/"
+categories:
+- Creativity
+- Favorite
 author: Chase McCoy
 layout: post
-permalink: /2013/10/halfway-there/
-categories:
-  - Creativity
-  - Favorite
 ---
+
 Creativity is defined by my Mac as &#8220;the use of the imagination or original ideas, esp. in the production of an artistic work.&#8221;
 
 Being creative is one thing, but using our creativity to produce work that we can be proud of is an entirely different beast. Anyone who writes, designs, produces, develops, etc., knows how hard it can be to make something. Gaining success from the things that you spend so much time and effort making can be even harder.

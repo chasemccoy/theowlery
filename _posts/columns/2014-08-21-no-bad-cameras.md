@@ -1,10 +1,11 @@
 ---
 title: No Bad Cameras
+date: 2014-08-21 00:00:00 Z
+permalink: "/2014/08/no-bad-cameras/"
+categories:
+- Photography
 author: Chase McCoy
 layout: post
-permalink: /2014/08/no-bad-cameras/
-categories:
-  - Photography
 ---
 
 Chris Gampat, [writing at The Phoblographer](http://www.thephoblographer.com/2014/08/09/one-making-bad-camera-youre-just-bad-photographer):

@@ -1,11 +1,13 @@
 ---
 title: On the Everpix Shutdown
+date: 2013-11-06 00:00:00 Z
+permalink: "/2013/11/on-the-everpix-shutdown/"
+categories:
+- Nerdy
 author: Chase McCoy
 layout: post
-permalink: /2013/11/on-the-everpix-shutdown/
-categories:
-  - Nerdy
 ---
+
 [Everpix][1] was a service that me and many other people loved. The app allowed you to sync all of your photos to the cloud and view them anywhere. Yesterday, [Everpix announced][2] that they were shutting down.
 
 I am sad that Everpix is going away. It was a great way to have access to your photos anywhere, and its automatic organization was really useful. But the more I think about it, the more obvious it seems to me that Everpix never stood a chance on its own.

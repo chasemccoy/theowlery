@@ -1,12 +1,14 @@
 ---
 title: Applying Pixar’s Rules of Storytelling to Writing
+date: 2013-03-12 00:00:00 Z
+permalink: "/2013/03/pixar-storytelling/"
+categories:
+- Favorite
+- Writing
 author: Chase McCoy
 layout: post
-permalink: /2013/03/pixar-storytelling/
-categories:
-  - Favorite
-  - Writing
 ---
+
 There has been a lot of talk about [this article][1], which outlines Pixar&#8217;s 22 rules of storytelling. They are all great tips, but a few of them in particular stand out as all-purpose rules that not only apply to animation, but also writing.
 
 > You gotta keep in mind what’s interesting to you as an audience, not what’s fun to do as a writer. They can be very different. 

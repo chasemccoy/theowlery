@@ -1,16 +1,18 @@
 ---
 title: An Introduction to DuckDuckGo
+date: 2014-05-22 00:00:00 Z
+permalink: "/2014/05/duckduckgo/"
+categories:
+- App
+- Nerdy
 author: Chase McCoy
 layout: post
-permalink: /2014/05/duckduckgo/
 ptadn_textarea:
-  - '{title} {link}'
+- "{title} {link}"
 ptadn_disable_post:
-  - 0
-categories:
-  - App
-  - Nerdy
+- 0
 ---
+
 The word “Google” has become synonymous with searching the internet, but Google is not the only decent search engine out there. There is another one called [DuckDuckGo][1]. In fact, I actually like DuckDuckGo better than Google.
 
 What is DuckDuckGo? Well, it’s a search engine. But it’s a search engine with a lot of nifty features. The biggest of those features is that it doesn’t track you. Unlike most search engines, DDG does not store your personal information that some search engines collect through your search history. You can read more about all of this [here][2]. While this is great to have, it’s not what sold me on DDG.

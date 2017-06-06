@@ -1,15 +1,17 @@
 ---
 title: Typed for Mac
+date: 2014-12-01 00:00:00 Z
+permalink: "/2014/12/typed-for-mac/"
+categories:
+- Reviews
 author: Chase McCoy
 layout: post
-permalink: /2014/12/typed-for-mac/
 ptadn_textarea:
-  - '{title} {link}'
+- "{title} {link}"
 ptadn_disable_post:
-  - 0
-categories:
-  - Reviews
+- 0
 ---
+
 Today, [Realmac][1] is releasing their new Markdown writing app for the Mac. [Typed is available now from Realmac&#8217;s website][2].
 
 I was fortunate enough to get an early look at Typed, and I was very impressed. There are tons of writing apps for Mac, and Typed is not revolutionary. But, it does have some very nice features that make it worth having.

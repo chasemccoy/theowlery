@@ -1,11 +1,13 @@
 ---
-title: 'Details from Panic&#8217;s 2014 Report'
+title: Details from Panic&#8217;s 2014 Report
+date: 2015-01-05 00:00:00 Z
+permalink: "/2015/01/details-from-panics-2014-report/"
+categories:
+- Apple
 author: Chase McCoy
 layout: post
-permalink: /2015/01/details-from-panics-2014-report/
-categories:
-  - Apple
 ---
+
 [Panic][1] make some of the best software for iOS and OS X. Just this year, they released [Transmit for iOS][2], which is one of the most useful iOS apps ever.
 
 Having been in business for so long, Panic is in a good position to analyze the market for both the iOS and Mac App Stores. [They just published a report on 2014 that contains a lot of great information][3]. Firstly, I'm very happy to see that Panic saw a lot of success in 2014. Their releases last year were stellar, and I'm glad to know that there is still plenty of demand for apps like Transmit, Prompt, and Coda.

@@ -1,11 +1,13 @@
 ---
 title: 'Field Notes: Arts and Sciences Edition'
+date: 2014-06-11 00:00:00 Z
+permalink: "/2014/06/arts-and-sciences/"
+categories:
+- Stationery
 author: Chase McCoy
 layout: post
-permalink: /2014/06/arts-and-sciences/
-categories:
-  - Stationery
 ---
+
 Back again with their summer release, Field Notes has released the [&#8220;Arts and Sciences edition&#8221;][1]. There are two big things that set this set apart from the previous editions:
 
   1. The books are larger. Instead of the traditional 3.5˝ by 5.5˝ memo books, these new ones are 7.5˝ by 4.75˝. I really love this size. I love the smaller size as well, but sometimes I just need something a little bigger.</p> 

@@ -1,16 +1,18 @@
 ---
 title: Reeling in your online presence
+date: 2014-03-14 00:00:00 Z
+permalink: "/2014/03/reeling-it-in/"
+categories:
+- Link
+- Writing
 author: Chase McCoy
 layout: post
-permalink: /2014/03/reeling-it-in/
 ptadn_textarea:
-  - '{title} {link}'
+- "{title} {link}"
 ptadn_disable_post:
-  - 0
-categories:
-  - Link
-  - Writing
+- 0
 ---
+
 [Josh Ginter writes about][1] the struggle to manage the cornucopia of publishing services available to us:
 
 > In saying that, it would appear to be inhumane to limit our content to a few defined topics. Dividing our interests amongst publishing platforms is like dividing our souls and jettisoning them into a void. I cringe when I have to decide where to publish my next thought or photo or link.

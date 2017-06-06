@@ -1,5 +1,6 @@
 ---
 title: Violent Work
+date: 2016-11-06 00:00:00 Z
 source: Gustave Flaubert
 ---
 

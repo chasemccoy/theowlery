@@ -1,5 +1,6 @@
 ---
 title: Exploring the Windsor Ruins
+date: 2016-01-02 00:00:00 Z
 image: 2016/01/windsor2.jpg
 ---
 

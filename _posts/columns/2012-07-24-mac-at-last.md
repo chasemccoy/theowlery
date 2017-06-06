@@ -1,12 +1,14 @@
 ---
 title: A Mac At Last
+date: 2012-07-24 00:00:00 Z
+permalink: "/2012/07/mac-at-last/"
+categories:
+- Favorite
+- Nerdy
 author: Chase McCoy
 layout: post
-permalink: /2012/07/mac-at-last/
-categories:
-  - Favorite
-  - Nerdy
 ---
+
 My first computer was an [IBM Aptiva][1]. It ran whatever version of Windows was standard (Windows 95 I believe), and it was amazing. Even though it was a relatively sub-par computer, I was only a child and therefore didn&#8217;t realize that it was anything short of magic.
 
 That computer is an important piece of my history, because it put me on a life long path of nerdiness. Computers have always played a significant role in my life, and they have always been Windows powered machines.

@@ -1,5 +1,6 @@
 ---
 title: Form Validation with Swift Protocol Extensions
+date: 2016-06-08 00:00:00 Z
 ---
 
 If you develop iOS apps I am pretty sure you have needed to validate an input form at some point. It’s a pretty common use case that can lead to a lot of repeated code in the wrong places.

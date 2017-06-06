@@ -1,16 +1,18 @@
 ---
 title: 'Review: Unread for iPhone'
+date: 2014-02-03 00:00:00 Z
+permalink: "/2014/02/unread-review/"
+categories:
+- Favorite
+- Reviews
 author: Chase McCoy
 layout: post
-permalink: /2014/02/unread-review/
 ptadn_textarea:
-  - '{title} {link}'
+- "{title} {link}"
 ptadn_disable_post:
-  - 0
-categories:
-  - Favorite
-  - Reviews
+- 0
 ---
+
 It has long been said that Twitter apps are the UI playground of mobile development. The same could be said for podcast or calendar apps. It stands to reason that the more abstract the data, the more possibilities there are for making a terrific user interface. That must mean that RSS apps are one of the biggest opportunities for great design.
 
 [Jared Sinclair][1] is the developer of [Riposte for App.net][2]. If you aren’t familiar with Riposte, it is an app that proves how design is about restraint. Riposte is a relatively simple app for viewing and interacting with App.net posts. The design of the app lends itself to the content, but it also is present enough to be helpful and charming. With the release of [Unread][3], Jared has brought the same design philosophies to a medium that, to use Jared’s words, consists of nothing but plain text and a little markup.

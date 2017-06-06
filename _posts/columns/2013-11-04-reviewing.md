@@ -1,15 +1,17 @@
 ---
 title: The Importance of Reviewing
+date: 2013-11-04 00:00:00 Z
+permalink: "/2013/11/reviewing/"
+categories:
+- Creativity
 author: Chase McCoy
 layout: post
-permalink: /2013/11/reviewing/
 ptadn_textarea:
-  - '{title} {link}'
+- "{title} {link}"
 ptadn_disable_post:
-  - 0
-categories:
-  - Creativity
+- 0
 ---
+
 If you are a nerd, you probably spend a lot of time capturing data. Saving links to Pinboard, clipping webpages into Evernote, writing journal entries in [Day One][1], taking photos with your iPhone, and adding a task to OmniFocus are all just different ways to capturing different kinds of information.
 
 Nick Wynja [has some thoughts][2] on the step that comes after capture:

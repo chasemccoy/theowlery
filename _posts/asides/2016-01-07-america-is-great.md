@@ -1,4 +1,6 @@
 ---
+title: America Is Great
+date: 2016-01-07 00:00:00 Z
 Title: America is Great
 ---
 

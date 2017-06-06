@@ -1,10 +1,11 @@
 ---
 title: The iPad Paradox
+date: 2015-11-18 00:00:00 Z
+permalink: "/2015/11/the-ipad-paradox/"
+categories:
+- Apple
 author: Chase McCoy
 layout: post
-permalink: /2015/11/the-ipad-paradox/
-categories:
-  - Apple
 ---
 
 It’s pretty amazing just how quickly my primary devices have changed over the years. First, just a laptop. Then, a desktop computer and an iPad as my laptop. Now, a MacBook and an iPad as an occasional entertainment device.

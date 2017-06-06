@@ -1,11 +1,13 @@
 ---
 title: Living in the Future
+date: 2014-09-02 00:00:00 Z
+permalink: "/2014/09/the-future/"
+categories:
+- Nerdy
 author: Chase McCoy
 layout: post
-permalink: /2014/09/the-future/
-categories:
-  - Nerdy
 ---
+
 The world is a place filled with impatience. The constant push for the biggest, boldest, best whatever happens every day. Human beings are a curious species, and we are also a desirous one. We want more and more, because more often means better.
 
 On the internet, it can be hard to step back from this. After all, I like better batteries, bigger screens, and faster computers as much as the next guy. Innovation is not a bad thing. In fact, I think it’s a really great thing. I wouldn&#8217;t be the person that I am today if it weren’t for Apple and their neat toys. I look forward to every fall when they show us newer, neater toys. But everyday I think to myself more and more that, finally, it’s enough.

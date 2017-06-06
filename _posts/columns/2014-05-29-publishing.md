@@ -1,15 +1,17 @@
 ---
-title: 'Making &#038; Publishing'
+title: Making &#038; Publishing
+date: 2014-05-29 00:00:00 Z
+permalink: "/2014/05/publishing/"
+categories:
+- Creativity
 author: Chase McCoy
 layout: post
-permalink: /2014/05/publishing/
 ptadn_textarea:
-  - '{title} {link}'
+- "{title} {link}"
 ptadn_disable_post:
-  - 0
-categories:
-  - Creativity
+- 0
 ---
+
 Being creative often means that you are a maker. You produce something of value to yourself and/or others. So what is more important? Is it the making, or is it the shipping? Is shipping your work ever as important as the process of making it? Or is it always as important? I’m not sure. It probably depends.
 
 [CJ Chilvers wrote an excellent little piece about being a publisher][1]. He makes a great point that in our world today, almost everyone is a publisher. In his words:

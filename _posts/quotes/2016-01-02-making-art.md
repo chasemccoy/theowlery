@@ -1,5 +1,6 @@
 ---
 title: Making Art
+date: 2016-01-02 00:00:00 Z
 source: Kevin Russ
 ---
 

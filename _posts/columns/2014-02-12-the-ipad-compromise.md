@@ -1,11 +1,13 @@
 ---
 title: The iPad Compromise
+date: 2014-02-12 00:00:00 Z
+permalink: "/2014/02/the-ipad-compromise/"
+categories:
+- Apple
 author: Chase McCoy
 layout: post
-permalink: /2014/02/the-ipad-compromise/
-categories:
-  - Apple
 ---
+
 Shawn Blanc has spent the last few months with an iPad Air and an iPad mini. Today, he finally [wrote about his decision][1] on which to keep. He chose the iPad mini, and had this to say:
 
 > Both iPads are an awesome compromise.

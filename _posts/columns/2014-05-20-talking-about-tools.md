@@ -1,16 +1,18 @@
 ---
 title: Talking About Tools
+date: 2014-05-20 00:00:00 Z
+permalink: "/2014/05/talking-about-tools/"
+categories:
+- Creativity
+- Favorite
 author: Chase McCoy
 layout: post
-permalink: /2014/05/talking-about-tools/
 ptadn_textarea:
-  - '{title} {link}'
+- "{title} {link}"
 ptadn_disable_post:
-  - 0
-categories:
-  - Creativity
-  - Favorite
+- 0
 ---
+
 Anyone who does any sort of creative work knows the danger of obsessing over tools. People online debate all the time about the importance of the tools that we use to do our work.
 
 Why does this come up so often? I think it’s because worrying about our tools is an easy way to procrastinate, and we humans are constantly looking for an excuse to not do the work. Everyone knows that tools are important, but if we spend too much time fiddling we can fall into the trap of using the tools without actually getting anything done with the tools.
