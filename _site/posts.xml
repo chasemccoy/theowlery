@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>The Owlery Column</title>
+    <description>Description</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/gposts.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Wed, 23 Jan 2019 21:47:42 -0600</pubDate>
+    <lastBuildDate>Wed, 23 Jan 2019 21:47:42 -0600</lastBuildDate>
+    <generator>Jekyll v3.5.1</generator>
+    
+      <item>
+        <title>Excellent Jams: Winter 2016</title>
+        <description>&lt;p&gt;Music is my biggest obsession, and I thought it would be a fun idea to round up some things that I have been jamming to recently. Some of these albums are new, some are not-so-new, but they are all great. I’ve included Spotify links to all of them. Enjoy!&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://open.spotify.com/album/43TJjpNBfw0qY6E87VeIxX&quot;&gt;The Rolling Stones: Blue &amp;amp; Lonesome&lt;/a&gt;&lt;/strong&gt;  &lt;br /&gt;
+Just released today, this album features Mick and the crew covering classing blues songs. If you’re into blues, check this out for sure.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://open.spotify.com/album/5AgsHUKFxr5DApRCmulIqJ&quot;&gt;The Hamilton Mixtape&lt;/a&gt;&lt;/strong&gt;  &lt;br /&gt;
+Another one that just dropped, this features songs from the popular musical covered by popular artists. There are even a few demos by Lin-Manuel Miranda that didn’t make it into the show.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://open.spotify.com/album/30Ni9qg2MBeeZXybsMOQ7m&quot;&gt;OneRepublic: Oh My My&lt;/a&gt;&lt;/strong&gt;  &lt;br /&gt;
+OneRepublic’s latest album is their best one yet, in my humble opinion.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://open.spotify.com/album/2jJReDZqTuAxr4R0ItimZc&quot;&gt;Jon Bellion: The Human Condition&lt;/a&gt;&lt;/strong&gt; &lt;br /&gt;
+Jon Bellion is more talented than anyone has any right to be. His music combines hip-hop, R&amp;amp;B, and indie rock in a beautiful way. If you listen to one thing from this list, it should be this.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://open.spotify.com/album/4PgleR09JVnm3zY1fW3XBA&quot;&gt;Bruno Mars: 24K Magic&lt;/a&gt;&lt;/strong&gt; &lt;br /&gt;
+If Michael Jackson was the King of Pop, Bruno Mars is most definitely the heir to the throne.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://open.spotify.com/album/3PYk8e7eo2t5CA1Y3AvhaG&quot;&gt;Young the Giant: Home of the Strange&lt;/a&gt;&lt;/strong&gt;  &lt;br /&gt;
+Young the Giant is one the best indie rock bands. Their latest album shakes things up a bit and keeps it fresh.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://open.spotify.com/album/43URJ507cdoIRy3GJdfxjs&quot;&gt;Saint Motel: saintmotelevision&lt;/a&gt;&lt;/strong&gt;  &lt;br /&gt;
+Saint Motel is an indie pop staple, and their latest album is quite good.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;I hope you enjoy these as much as I do! &lt;a href=&quot;https://twitter.com/chase_mccoy&quot;&gt;Hit me up on Twitter&lt;/a&gt; and let me know what you think.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 01 Dec 2016 18:00:00 -0600</pubDate>
+        <link>http://localhost:4000/2016/12/tunage</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/12/tunage</guid>
+      </item>
+    
+      <item>
+        <title>Default Constraint Behaviors Using Swift Protocols</title>
+        <description>&lt;p&gt;When developing an iOS app, you often need to adjust constraints in order to make sure that the keyboard doesn’t obscure any of the elements on screen. This is a common problem that is an easy but annoying fix.&lt;/p&gt;
+
+&lt;p&gt;A few days ago I came across &lt;a href=&quot;https://blog.propellerlabs.co/making-life-easier-with-a-keyboardavoidable-protocol-62c6689f603d#.xpxq1lk3w&quot;&gt;this Medium article by Roy McKenzie about a Swift protocol called &lt;code class=&quot;highlighter-rouge&quot;&gt;KeyboardAvoidable&lt;/code&gt;&lt;/a&gt; that makes this process so much easier.&lt;/p&gt;
+
+&lt;p&gt;To sum it up quickly, any view controller that needs to adjust constraints in response to the keyboard hiding/showing just needs to conform to this protocol and then provide an array of constraints that need to be adjusted. The protocol extension has default methods that can be called when the controller is presented to add keyboard observers, and vice versa when the controller is dismissed.&lt;/p&gt;
+
+&lt;p&gt;With this short bit of code (available ion a Gist at the end of the post), all you would need to do to get this behavior is hook up outlets to the constraints of the views that need to be adjusted (probably the bottom constraint of a scroll view), stick them in an array, and implement the requirements of the protocol. When the keyboard is shown, your constraints will all be adjusted &lt;em&gt;and&lt;/em&gt; animated. Sweet.&lt;/p&gt;
+
+&lt;p&gt;This ideas is so incredibly cool and useful and awesome and I plan to use it in every single project that requires this kind of behavior. What’s better is that the code is very easy to understand and modify for your specific needs.&lt;/p&gt;
+
+&lt;p&gt;After seeing this, it got me thinking about other ways protocols can be used to add default behaviors to views by injecting constraints. Every constraint you create in IB is of type &lt;code class=&quot;highlighter-rouge&quot;&gt;NSLayoutConstraint&lt;/code&gt;, which means we can create very generic and reusable code very easily. &lt;a href=&quot;https://www.natashatherobot.com/protocol-oriented-views-in-swift/&quot;&gt;Natasha the Robot has a great post about protocol-oriented views in Swift&lt;/a&gt; that is similar to this, except she isn’t using constraints. In that post, she demonstrated adding animations like shaking to views using protocols so that this functionality can be reused.&lt;/p&gt;
+
+&lt;p&gt;In a project I am working on, I have some views inside of a view controller that need to be toggled between being hidden or shown when the user tap’s a button. In addition, I want the view to animate into and off of the screen when it is toggled.&lt;/p&gt;
+
+&lt;p&gt;Originally, I was just creating outlets to the constraints on these views that I wanted to collapse upon and then putting all of the toggling logic into a method in my view controller that would get called when a button was tapped. This led to a lot of repeated code. For every collapsible view in my view controller, I was essentially writing the exact same code with slight variations to change which constraint I was collapsing upon. After seeing Roy’s &lt;code class=&quot;highlighter-rouge&quot;&gt;KeyboardAvoidable&lt;/code&gt; protocol, I realized there was a much better way.&lt;/p&gt;
+
+&lt;p&gt;I started by making a protocol to represent collapsible views:&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;protocol&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Collapsible&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;collapseConstraint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSLayoutConstraint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;get&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;collapseView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;showView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;isCollapsed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Bool&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;collapseConstraint&lt;/code&gt; variable is the constraint that we want our view to collapse upon. I made this optional because there could be a situation where we want to use one of these views without the collapsing functionality, and in that case we just won’t set this variable and it will default to nil. The &lt;code class=&quot;highlighter-rouge&quot;&gt;collapseView()&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;showView()&lt;/code&gt; methods are called when we tap our button, and the &lt;code class=&quot;highlighter-rouge&quot;&gt;isCollapsed()&lt;/code&gt; method just returns a bool letting us know what state we’re in.&lt;/p&gt;
+
+&lt;p&gt;Next, I created an extension for my &lt;code class=&quot;highlighter-rouge&quot;&gt;Collapsible&lt;/code&gt; protocol that defined my default implementations of those methods. I constrained my extension to only apply to &lt;code class=&quot;highlighter-rouge&quot;&gt;UIView&lt;/code&gt; objects:&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;extension&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Collapsible&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;Self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIView&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;collapseView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;collapseConstraint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;constant&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;frame&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  
+  &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;showView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;collapseConstraint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;constant&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  
+  &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;isCollapsed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Bool&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;collapseConstraint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;constant&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;In my app, these view’s will be sliding into and off of the screen from the left or the right, so the &lt;code class=&quot;highlighter-rouge&quot;&gt;collapseView()&lt;/code&gt; method set’s the constant of the collapse constraint to the negative value of the width (that way the view is entirely off screen). The &lt;code class=&quot;highlighter-rouge&quot;&gt;showView()&lt;/code&gt; method sets the constant to 0, so that the view is pinned to the left or right edge. These methods will obviously need to be customized depending on which direction you want your view’s to collapse. If you wanted to get really fancy, you could set the direction as well as the constraint so that you can collapse in any direction with this one protocol.&lt;/p&gt;
+
+&lt;p&gt;The next step is just to create a view that conforms to the protocol, and declare our &lt;code class=&quot;highlighter-rouge&quot;&gt;collapseConstraint&lt;/code&gt; variable:&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;MyView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Collapsible&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
+  &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;collapseConstraint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSLayoutConstraint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;In my app, I am putting my views into my controller using Interface Builder. So inside of my controller I just create an outlet to the view and to the constraint that I want to collapse upon (trailing for right edge or leading for left edge), and in &lt;code class=&quot;highlighter-rouge&quot;&gt;viewDidLoad()&lt;/code&gt; I set the &lt;code class=&quot;highlighter-rouge&quot;&gt;collapseConstraint&lt;/code&gt; variable:&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;MyViewController&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIViewController&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;@IBOutlet&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;myView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;MyView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;@IBOutlet&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;myViewLeadingConstraint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSLayoutConstraint&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;
+  
+  &lt;span class=&quot;k&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;viewDidLoad&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;viewDidLoad&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    
+    &lt;span class=&quot;n&quot;&gt;myView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;collapseConstraint&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myViewLeadingConstraint&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The only thing left to do is put in a method that gets called when you tap a button (or take some other action):&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;buttonTapped&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;isCollapsed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	  &lt;span class=&quot;n&quot;&gt;myView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;showView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	  &lt;span class=&quot;n&quot;&gt;myView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;collapseView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+	
+	&lt;span class=&quot;kt&quot;&gt;UIView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;animateWithDuration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	  &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;layoutIfNeeded&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I put in the animation block in order to make the constraint change animate over a given time.&lt;/p&gt;
+
+&lt;p&gt;Building protocols like these make creating repeated behaviors extremely simple, and IB constraints fit so perfectly into this method. I am using this technique in several places, and I highly recommend it.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 12 Nov 2016 18:00:00 -0600</pubDate>
+        <link>http://localhost:4000/2016/11/protocol-constraint-behaviors</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/11/protocol-constraint-behaviors</guid>
+      </item>
+    
+      <item>
+        <title>Sketch + Git</title>
+        <description>&lt;p&gt;If you do any sort of interface design in a team environment, you have probably run into the following scenario: you edit some mockups, export them, and then send them to your developers. Then you make some changes, and send them again. Next thing you know, you’ve got 24 copies of the mockups and each one is different and your developers don’t know which one is the latest and everything is chaos.&lt;/p&gt;
+
+&lt;p&gt;Well, I had this problem at least. The company I work for doesn’t purchase copies of Sketch for everyone, so I couldn’t just throw my Sketch document into a repo and share it with the developers. I found an even better solution.&lt;/p&gt;
+
+&lt;p&gt;Mathieu Dutour has created &lt;a href=&quot;https://mathieudutour.github.io/git-sketch-plugin/&quot;&gt;the amazing Git Sketch Plugin&lt;/a&gt;. This plugin adds some very useful features to Sketch that make working with a team of developers so much easier.&lt;/p&gt;
+
+&lt;p&gt;To get started, install the plugin and place your Sketch file in  the repo for your project. The workflow from there looks like this:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Make some changes in your Sketch file.&lt;/li&gt;
+  &lt;li&gt;Use the plugin menu to commit your changes.&lt;/li&gt;
+  &lt;li&gt;Use the plugin menu to push your changes.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Whenever you commit, the plugin will ask for a commit message and then it will &lt;em&gt;automatically export the mockups that have been edited since the last commit&lt;/em&gt;. This way, whenever you make changes and commit, the latest mockups (and only the latest mockups) will automatically be exported to the repo. Then, your developers can just pull and feel confident that they always have the latest mockups.&lt;/p&gt;
+
+&lt;p&gt;What’s extra cool is that you can even view diffs on the mockups, so that you can compare side by side the changes from past commits until the latest.&lt;/p&gt;
+
+&lt;p&gt;This plugin has made working on my team so much more efficient and easy for everyone involved. I can’t recommend it enough.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://mathieudutour.github.io/git-sketch-plugin/&quot;&gt;Download the plugin and make your life better&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 29 Sep 2016 19:00:00 -0500</pubDate>
+        <link>http://localhost:4000/2016/09/sketch-git</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/09/sketch-git</guid>
+      </item>
+    
+      <item>
+        <title>Form Validation with Swift Protocol Extensions</title>
+        <description>&lt;p&gt;If you develop iOS apps I am pretty sure you have needed to validate an input form at some point. It’s a pretty common use case that can lead to a lot of repeated code in the wrong places.&lt;/p&gt;
+
+&lt;p&gt;I am currently working on an app that has several input forms and I needed to find a better way to validate the inputs without repeating validation code anywhere. Of course, like they usually do, Swift’s protocols came to the rescue.&lt;/p&gt;
+
+&lt;p&gt;In addition, you will probably want a way to let the user know why their input is invalid, so I start by declaring an enum that has two cases: &lt;code class=&quot;highlighter-rouge&quot;&gt;Valid&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;Invalid&lt;/code&gt;. The &lt;code class=&quot;highlighter-rouge&quot;&gt;Invalid&lt;/code&gt; case has an associated string value that will store the error message.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;enum&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;ValidationResult&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Valid&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Invalid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Next, create a protocol for each type of input that you need to validate (email, password, user name, etc.). The key here is that since we don’t want to rewrite code, we will declare the functions that actually validate the input inside of a protocol extension.&lt;/p&gt;
+
+&lt;p&gt;Methods declared inside of protocol extensions have implementations that are available to all types that conform to that protocol. Here I created a protocol called &lt;code class=&quot;highlighter-rouge&quot;&gt;ValidatesPassword&lt;/code&gt; and inside of an extension I wrote an &lt;code class=&quot;highlighter-rouge&quot;&gt;isPasswordValid&lt;/code&gt; method. This method accepts the password as a string and returns one of our &lt;code class=&quot;highlighter-rouge&quot;&gt;ValidationResult&lt;/code&gt; cases.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;protocol&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;ValidatesPassword&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;extension&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;ValidatesPassword&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;isPasswordValid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;ValidationResult&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;guard&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;password&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Invalid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Password field is empty.&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    
+    &lt;span class=&quot;k&quot;&gt;guard&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;characters&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Invalid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Password must be at least 8 characters long.&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Valid&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;You can see that whenever we find an invalid password, we return &lt;code class=&quot;highlighter-rouge&quot;&gt;.Invalid&lt;/code&gt; with our error string associated. Guards make it really easy to cascade validation requirements and exit the function without evaluating unnecessary conditions. If all of the conditions are met, we return &lt;code class=&quot;highlighter-rouge&quot;&gt;.Valid&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;One we have created all of our validating protocols, we can simply create a struct that conforms to the ones we need and validates any input field in our app.&lt;/p&gt;
+
+&lt;p&gt;One neat trick here is that if you have an input form with a lot of fields, it can become messy to conform to all of those protocols. Instead, create a typealias for the ones you need and then just conform to that one:&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;typealias&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;ValidatesRegistrationForm&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;protocol&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;ValidatesName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;ValidatesEmail&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;ValidatesAge&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;ValidatesZipCode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;ValidatesPassword&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;In the app I am currently writing, I created a struct that gets initialized with all of my &lt;code class=&quot;highlighter-rouge&quot;&gt;UITextField&lt;/code&gt;s and then validates each field one by one. It simply switches on the result and handles the cases appropriately.&lt;/p&gt;
+
+&lt;p&gt;When the user hits the “Submit” button, the view controller creates an instance of the validator and calls the validate function. I also pass in a completion handler that accepts and displays an alert controller. That way, if a validation step fails, the validator can create a &lt;code class=&quot;highlighter-rouge&quot;&gt;UIAlertController&lt;/code&gt; with the error message and pass this into the callback to display it to the user.&lt;/p&gt;
+
+&lt;p&gt;What is great about this message is that if our validation conditions ever change, we simply have to update our validation function in one place and then every form in our app will validate correctly.&lt;/p&gt;
+
+&lt;p&gt;Hope this helps! If you have any questions or comments (or suggestions for making this better) please send me a tweet &lt;a href=&quot;http://twitter.com/chase_mccoy&quot;&gt;@chase_mccoy&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 07 Jun 2016 19:00:00 -0500</pubDate>
+        <link>http://localhost:4000/2016/06/swift-protocol-form-validation</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/06/swift-protocol-form-validation</guid>
+      </item>
+    
+      <item>
+        <title>Exploring the Windsor Ruins</title>
+        <description>&lt;p&gt;I live in Mississippi, which has its upsides and downsides when it comes to photographic opportunities. On one hand, there are lots of beautiful things to photograph. On the other, most of those things are all really similar.&lt;/p&gt;
+
+&lt;p&gt;One landmark in MS that I have always wanted to visit and photograph are the Windsor Ruins in Port Gibson. Wikipedia &lt;a href=&quot;https://en.wikipedia.org/wiki/Windsor_Ruins&quot;&gt;sums up this landmark pretty well&lt;/a&gt;:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The ruins consist of 23 standing Corinthian columns of the largest antebellum Greek Revival mansion ever built in the state. The mansion stood from 1861 to 1890, when it was destroyed by fire.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This past October, a friend and I decided to make the 4 hour trip to the ruins to take photos. We of course stopped at many placed along the way to document our trip.&lt;/p&gt;
+
+&lt;p&gt;Here is a lovely sunken path we found exploring the woods around Port Gibson:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://theowlery.co/assets/img/2016/01/windsor1.jpg&quot; alt=&quot;Sunken Path&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The leaves had just begun to change colors when we made this trip, which made for a lovely combination of oranges, yellows, and greens in the photos.&lt;/p&gt;
+
+&lt;p&gt;We stumbled upon a dilapidated house on the way and I managed to get this spooky shot. I didn’t expect this to turn out very well but in the end I think it’s a very interesting photo:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://theowlery.co/assets/img/2016/01/windsor3.jpg&quot; alt=&quot;Spooky&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;When we arrived at the ruins we were glad to find that we were the only ones there that day. It was also raining quite a bit, but it stopped right when we arrived. This gave us a great moody, wet environment to take photos.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://theowlery.co/assets/img/2016/01/windsor4.jpg&quot; alt=&quot;Close Up&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The columns were extremely difficult to capture in one photo. They are extremely tall and so surreal standing all alone in the middle on nowhere.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://theowlery.co/assets/img/2016/01/windsor5.jpg&quot; alt=&quot;Upward&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;If you ever come through Mississippi I highly recommend you stop by the Windsor Ruins. They are a lovely landmark of a past era, and they are not far off the Natchez Trace, which has many beautiful sights.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://theowlery.co/assets/img/2016/01/windsor6.jpg&quot; alt=&quot;The Ruins&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 01 Jan 2016 18:00:00 -0600</pubDate>
+        <link>http://localhost:4000/2016/01/windsor-ruins</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/01/windsor-ruins</guid>
+      </item>
+    
+      <item>
+        <title>The iPad Paradox</title>
+        <description>&lt;p&gt;It’s pretty amazing just how quickly my primary devices have changed over the years. First, just a laptop. Then, a desktop computer and an iPad as my laptop. Now, a MacBook and an iPad as an occasional entertainment device.&lt;/p&gt;
+
+&lt;p&gt;The iPad has always been the puzzle piece that just doesn’t quite fit for me. I’ve long thought that the idea of using an iPad as a mobile computer is a great one. After all, the iPad is ultimately mobile and features some world-class mobile software. But in practice, I have never been able to tear myself apart from my MacBook when I need a computer on the go (or at home).&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;p&gt;The truth of the matter is that whatever I can get done on my iPad, I can do on my Mac with half the time and effort. And then there are all the things I can’t do on the iPad at all (like develop iOS apps). However, I still feel compelled by the iPad itself as a mobile computer. It’s simplicity and great selection of apps makes it something I &lt;em&gt;enjoy&lt;/em&gt; using, even though it’s not necessarily easier to use than my Mac.&lt;/p&gt;
+
+&lt;p&gt;When Apple announced split screen as a new feature for the iPad Air 2 with iOS 9, I was obviously very intrigued. Now the iPad could allow you to see and work in two different apps at a time, essentially doubling your productivity in some situations. Taking notes while reading something else was always a pain on the iPad, but with split screen that was no longer an issue. Unfortunately, I have an iPad Air 1, which means I don’t get access to this feature. So I took matters into my own hands by jailbreaking my iPad and installing a tweak that allows me to use split screen.&lt;/p&gt;
+
+&lt;p&gt;After using it for a bit, I can definitely say that split screen is a great feature on the iPad, and Apple has a very simple implementation of it. Opening and using two apps at a time is not only easy to do, but also is a real joy to use when you need to do two tasks at once. This is true multitasking on iOS, and it adds a lot of value.&lt;/p&gt;
+
+&lt;p&gt;Split screen is nice on the iPad Air, but what I am really interested in is using this feature on the new iPad Pro. In landscape, the iPad Pro can show two portrait, iPad Air-sized apps at the same time. All of a sudden, the iPad has turned into something much more powerful (also helped by Apple’s new keyboard and Pencil accessories). More than any other product Apple has released in the past few years, the iPad Pro stands out to me as the biggest potential game-changer. I’m also extremely wary of it.&lt;/p&gt;
+
+&lt;p&gt;If there is any device out there that can help me simplify my mobile computing experience and leave my Mac at home, it’s got to be the iPad Pro. From the reviews and I’ve read it seems as though the Pro is an all new device, completely separated from previous iPads by not only a bigger form-factor, but also a greater facilitation of creation rather than consumption.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://thenewsprint.co/2015/11/14/some-first-impressions-of-the-ipad-pro/&quot;&gt;Josh Ginter summed this up well in his initial impressions&lt;/a&gt;:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;So, is “iPad Pro” the right moniker? Not likely. This device isn’t an iPad. I’ve never used an iPad like I use this device. I’ve never enjoyed resting an iPad flat on the table to type out a long iMessage, yet I’ve done it multiple times with the iPad Pro in the last 24 hours. I’ve always enjoyed strolling around the house while reading the news on my iPad, but I can hardly hold the iPad Pro with one hand for more than a minute, let alone not feel like a clown with a gigantic slab of glass and aluminum resting in my forearm. And, most importantly, I’ve always shied away from using my iPad like a laptop computer. Yet, here I am, using my iPad Pro to write for the first time in a very long time.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Likewise, most of this post was written using my iPad Air and a Bluetooth keyboard. The ability to do work on an iPad has always been there, but I am very certain that the &lt;em&gt;desire&lt;/em&gt; to do it would be increased on an iPad Pro. That’s why I would love to try one out for a few weeks.&lt;/p&gt;
+
+&lt;p&gt;I won’t be buying an iPad Pro (it’s just too much money for me at the moment), but I will be keeping an eye on it. I had all but given up on my desire to transition to an iPad-only mobile workflow, but the iPad Pro has sparked that interest again in a whole new way, and that’s something that excites me a great deal.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 17 Nov 2015 18:00:00 -0600</pubDate>
+        <link>http://localhost:4000/2015/11/the-ipad-paradox/</link>
+        <guid isPermaLink="true">http://localhost:4000/2015/11/the-ipad-paradox/</guid>
+      </item>
+    
+      <item>
+        <title>Yes, your opinion can be wrong</title>
+        <description>&lt;p&gt;I really loved &lt;a href=&quot;http://www.houstonpress.com/arts/no-it-s-not-your-opinion-you-re-just-wrong-updated-7611752&quot;&gt;this article in the Houston Press about the danger of opinions and beliefs formed based on misinformation&lt;/a&gt;. Too often I see people who think that their opinion is valid simply because they believe it.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;In other words, you can form an opinion in a bubble, and for the first couple of decades of our lives we all do. However, eventually you are going to venture out into the world and find that what you thought was an informed opinion was actually just a tiny thought based on little data and your feelings. Many, many, many of your opinions will turn out to be uninformed or just flat out wrong. No, the fact that you believed it doesn’t make it any more valid or worthwhile, and nobody owes your viewpoint any respect simply because it is yours.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;It’s even more dangerous when those people spread the misinformation to others who believe it simply because it’s there. It’s the reason I avoid Facebook as much as I do.&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 16 Aug 2015 19:00:00 -0500</pubDate>
+        <link>http://localhost:4000/2015/08/yes-your-opinion-can-be-wrong/</link>
+        <guid isPermaLink="true">http://localhost:4000/2015/08/yes-your-opinion-can-be-wrong/</guid>
+      </item>
+    
+      <item>
+        <title>How to remove the margins from an iOS Today View Extension</title>
+        <description>&lt;p&gt;If you’ve ever developed a Today Extension for iOS, you know that by default there is a margin on the left hand side so that the content of the widget aligns with the title. This is nice, but sometimes we want our content to extend to the edge of the widget.&lt;/p&gt;
+
+&lt;p&gt;This is very simple to accomplish, but it’s a bit of code that I always forget. Just add this to the view controller of your widget and you are all set:&lt;/p&gt;
+
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIEdgeInsets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;widgetMarginInsetsForProposedMarginInsets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIEdgeInsets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;defaultMarginInsets&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;UIEdgeInsetsZero&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Sun, 16 Aug 2015 19:00:00 -0500</pubDate>
+        <link>http://localhost:4000/2015/08/remove-margins-today-extension</link>
+        <guid isPermaLink="true">http://localhost:4000/2015/08/remove-margins-today-extension</guid>
+      </item>
+    
+      <item>
+        <title>Nox — Sunset and Sunrise Times</title>
+        <description>&lt;p&gt;I am super excited to announce my latest venture, and newest project. Me and my friend &lt;a href=&quot;http://nathanansel.typed.com&quot;&gt;Nathan Ansel&lt;/a&gt; have started a design and development studio called &lt;a href=&quot;http://cosmicowl.co&quot;&gt;Cosmic Owl&lt;/a&gt;. Today, we are launching our first app.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://geo.itunes.apple.com/us/app/nox-sunset-and-sunrise-times/id998183834?mt=8&amp;amp;at=1010l5Ku&quot;&gt;Nox&lt;/a&gt; is a super simple, super fast app for finding when the sun will set and rise at your current location. Nox keeps track of your location in the background, and calculates the sunset and sunrise times algorithmically. That means no internet connection is required.&lt;/p&gt;
+
+&lt;p&gt;The app also features a notification center widget, and it allows you to get customizable alerts before the sunset and sunrise. If that sounds useful to you, I think you will really love Nox.&lt;/p&gt;
+
+&lt;p&gt;The app is $0.99, and it’s available today. &lt;a href=&quot;https://geo.itunes.apple.com/us/app/nox-sunset-and-sunrise-times/id998183834?mt=8&amp;amp;at=1010l5Ku&quot;&gt;Check it out in the App Store&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 14 Jul 2015 19:00:00 -0500</pubDate>
+        <link>http://localhost:4000/2015/07/nox/</link>
+        <guid isPermaLink="true">http://localhost:4000/2015/07/nox/</guid>
+      </item>
+    
+      <item>
+        <title>Touch &amp;#038; Tap</title>
+        <description>&lt;p&gt;Apple has a lot going on right now with the Apple Watch, new MacBook, ResearchKit, Apple TV, and of course WWDC right around the corner. However, they’ve managed to adopt a new technology really quickly that I think is the most exciting thing happening at the moment technology-wise. That thing is Force Touch and the Taptic Engine.&lt;/p&gt;
+
+&lt;p&gt;First introduced with the &lt;a href=&quot;http://www.apple.com/watch/&quot;&gt;Apple Watch&lt;/a&gt;, Force Touch is a new technology that let’s touch sensitive surfaces detect and recognize varying amounts and types of pressure. For example, force touching the screen of the Watch lets the user access contextual options. Additionally, the Taptic Engine is a new haptic feedback mechanism that can provide very realistic feedback. An example of this is when you get a notification on the Watch and it taps your wrist to let you know.&lt;/p&gt;
+
+&lt;p&gt;Just to clarify, the Watch doesn’t just vibrate like your iPhone. It creates a realistic sensation of a downward force on your wrist.&lt;/p&gt;
+
+&lt;p&gt;Most recently, Apple have added these technologies to the trackpad of the new &lt;a href=&quot;http://www.apple.com/macbook/&quot;&gt;MacBook&lt;/a&gt; (and also the MacBook Pro with Retina Display). Now, instead of the trackpad moving up and down when you click, it just senses the force that you are applying, and then uses the Taptic Engine to make it feel like the trackpad is moving.&lt;/p&gt;
+
+&lt;p&gt;This may not sound very interesting. On the surface, it just replaces a moving trackpad with the &lt;em&gt;sensation&lt;/em&gt; of a moving trackpad. But these technologies open up a world of possibilities. Apple is already exploring some of those on the Mac. For example, the trackpad can register “Force clicks” and perform contextual actions. If you force click a file, you will get a quick look of that file. If you click a file and apply a little more pressure, your Mac will know that you want to drag the file. Drawing on the trackpad is now pressure sensitive.&lt;/p&gt;
+
+&lt;p&gt;The Taptic Engine also comes into play. It can provide a tactile response to action on screen. &lt;a href=&quot;http://alex4d.com/notes/item/bumpy-pixels-future-haptic-apple-force-touch-trackpad&quot;&gt;Alex Gollner writes about&lt;/a&gt; how when dragging a video clip in iMovie to its maximum length, the trackpad will let you know you’ve hit the end using physical feedback. I haven’t used the new trackpad yet, so I can’t speak for it myself, but from what I’ve heard it is uncanny how realistic and accurate force touches and Taptic feedback is.&lt;/p&gt;
+
+&lt;p&gt;I think that these technologies are really important for Apple. I have no doubts that we will see them on the next iPhone and iPad, and that has some huge repercussions. &lt;a href=&quot;http://alex4d.com/notes/item/bumpy-pixels-future-haptic-apple-force-touch-trackpad&quot;&gt;Alex has this to say in the same article&lt;/a&gt;:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Perhaps we’ll look back and realise that the iOS 7 update removed borders from buttons because one day Apple user interfaces will be able to be felt as much as seen, and button text labels will feel more distinctive than button borders under our fingertips.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Can you imagine? Tapping a button in an iOS app feeling the sensation of pressing a real-life button is &lt;em&gt;huge&lt;/em&gt;. Not to mention tactile responses when dragging and selecting in apps, or feeling textures in games. And Force Touch will give us a whole new way to interact with iOS. Plus, force sensitive drawing could make the iPad the best drawing tablet on the market.&lt;/p&gt;
+
+&lt;p&gt;Apple’s touch and tap technologies came out of nowhere fast. I don’t think people quite understand yet how important this will be to changing digital interfaces. We have always been able to use touch to interact with our devices, but they have never really been able to use touch to interact with us. I am very excited to see how we will be using our devices in a year or two.&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 15 Mar 2015 19:00:00 -0500</pubDate>
+        <link>http://localhost:4000/2015/03/touch-and-tap/</link>
+        <guid isPermaLink="true">http://localhost:4000/2015/03/touch-and-tap/</guid>
+      </item>
+    
+  </channel>
+</rss>
